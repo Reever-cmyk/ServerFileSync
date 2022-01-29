@@ -3,6 +3,7 @@ package userinput;
 import java.util.Scanner;
 
 public class Userinput {
+
     /**
      * erzeugt eine input abfrage. prueft ob input in form eines Strings vorliegt.
      * laeuft solange bis ein string vorliegt speichert ihn in kleinbuchstaben.
@@ -34,6 +35,11 @@ public class Userinput {
         }
     }
 
+    /**
+     * prueft ob input ein String ist.
+     * @param s zu pruefende eingabe
+     * @return boolean
+     */
     private  boolean isInputString(String s) {
 
         if (s == null || s.equals("")) {
@@ -48,6 +54,11 @@ public class Userinput {
         return false;
     }
 
+    /**
+     * prueft ob input ein int ist.
+     * @param scanner prüft ob scanner.hasNextInt()
+     * @return boolean
+     */
     private  boolean isInputInt(Scanner scanner) {
         return scanner.hasNextInt();
 
