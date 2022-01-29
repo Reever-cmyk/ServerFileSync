@@ -1,16 +1,13 @@
 package client;
 
-import fileactions.Checksum;
-import server.Server;
-
 //TODO client hat clientDir. prueft ob mainDir checkSum anderst ist als seit letzten update falls ja update mainDir mit clientDir. update beinhaltet nur veraenderte dateien.
-public class Client {
+public class Clientmain {
     String dirPathClient;
     String clientIp;
     String serverIp;
     String dirPathServer;
 
-    public Client(String dirPathClient, String serverIp){
+    public Clientmain(String dirPathClient, String serverIp){
         this.dirPathClient = dirPathClient;
         this.serverIp = serverIp;
     }
@@ -20,9 +17,9 @@ public class Client {
     }
 
     /**
-        reine upload methode keine checks sonstiges.
-        @param name dies ist der testname
-     **/
+     * Schickt Directory an Server über Sockets.
+     * @return boolean
+     */
     private boolean uploadWork(){
         boolean updateStatus = true;
 

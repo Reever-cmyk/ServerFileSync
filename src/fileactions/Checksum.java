@@ -1,21 +1,16 @@
 package fileactions;
-import server.Server;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 public class Checksum {
 
-    private String dir;
-
-    public Checksum(Server server){
-        this.dir = server.getDir();
-    }
-
-    /*
-        erzeugt checksum des übergebenen Objects Server/Client
+    /**
+     * erzeugt SHA256 Hash einer directory
+     * @param dir String directory
+     * @return byte[]
      */
-    public byte[] getSHA256Hash() {
+    public static byte[] getSHA256Hash(String dir) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             return digest.digest(dir.getBytes(StandardCharsets.UTF_8));
@@ -23,6 +18,10 @@ public class Checksum {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean CheckHash(){
+
     }
 
 }
