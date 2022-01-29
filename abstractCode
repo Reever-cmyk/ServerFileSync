@@ -1,0 +1,15 @@
+Server:
+besitzt Main directory. Server erzeugt bei abfrage den Hash der Main directory vergleicht diese mit der von
+Client bereitgestellten Hash.
+
+sollte Client eine andere Hash haben fraegt der server ein update an.
+
+das Update sucht jetzt den Ordner der sich unterscheidet und liefert diesen.
+
+Client:
+besitzt Client directory. Client erstellt bei anfrage von Server den Hash. Client bestizt eine HashMap in
+der vorherige updates eingespeichert sind um zu vergleichen ob sich etwas an server oder client geandert
+hat.
+
+ServerFileSync:
+Main. startet Server.java/Client.java . Kommunikation von Server zu Client ueber Sockets
