@@ -2,6 +2,7 @@ package fileactions;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
+import java.util.Arrays;
 
 public class Checksum {
     String dir;
@@ -38,20 +39,8 @@ public class Checksum {
         return null;
     }
 
-    public static boolean compareCheckSum(String strC, String strS) {
-        int lC = strC.length();
-        int lS = strS.length();
-        int lMin = Math.min(lC, lS);
-
-        for (int i = 0; i < lMin; i++) {
-            int strC_ch = strC.charAt(i);
-            int strS_ch = strS.charAt(i);
-
-            if (strC_ch != strS_ch) {
-                return false;
-            }
-        }
-        return lC == lS;
+    public static boolean compareCheckSum(byte[] checkSumServer, byte[] checkSumClient) {
+        return Arrays.equals(checkSumClient, checkSumServer);
     }
 
 }

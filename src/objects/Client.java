@@ -46,7 +46,7 @@ public class Client {
      * @param port Server Port
      * @throws IOException Sockets werfen exception
      */
-    public void Checksum_Sender(int port) throws IOException
+    public void ChecksumSender(int port) throws IOException
     {
         ServerSocket servSock = new ServerSocket(port);
         Socket socket = servSock.accept();
@@ -62,15 +62,16 @@ public class Client {
             }
             if (dis.readUTF().equals("success"))
             {
-                System.out.println("Erfolgreiche Übertragung.");
+                System.out.println("Erfolgreiche Übertragung und übereinstimmende checksum.");
                 break;
             }
             else if (dis.readUTF().equals("failure"))
             {
-                System.out.println("Übertragung fehlgeschlagen.");
+                System.out.println("Erfolgreiche übertragung unterschiede in checksum erkannt.");
                 break;
             }
         }
+
         dis.close();
         dos.close();
         socket.close();
