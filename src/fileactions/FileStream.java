@@ -18,14 +18,4 @@ public class FileStream {
         return fileMap;
     }
 
-    public void fileCheckHash(HashMap<Integer, File> fileMap){
-        for(File file:fileMap.values()){
-            byte [] checksumClient = Checksum.getSHA256Hash(file.getAbsolutePath());
-            byte [] checkSumServer = Checksum.getSha256Hash()
-            if(ceckSumClient = checkSumServer){
-                uploadWork();
-            }
-        }
-    }
-
 }
