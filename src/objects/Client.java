@@ -46,8 +46,7 @@ public class Client {
      * @param port Server Port
      * @throws IOException Sockets werfen exception
      */
-    public void ChecksumSender(int port) throws IOException
-    {
+    public void ChecksumSender(int port) throws IOException {
         ServerSocket servSock = new ServerSocket(port);
         Socket socket = servSock.accept();
 
@@ -76,4 +75,5 @@ public class Client {
         dos.close();
         socket.close();
     }
+
 }

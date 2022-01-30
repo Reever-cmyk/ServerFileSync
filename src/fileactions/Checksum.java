@@ -11,8 +11,6 @@ public class Checksum {
         this.dir = dir;
     }
 
-
-
     /**
      * erzeugt SHA256 Hash einer directory
      * @param dir String directory
